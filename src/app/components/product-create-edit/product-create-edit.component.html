@@ -1,0 +1,48 @@
+<form [formGroup]="productForm" (ngSubmit)="SaveProduct()">
+    <mat-card>
+        <mat-card-header>
+            <h1>{{title}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Code</mat-label>
+                <input formControlName="code" matInput />
+                <mat-error *ngIf="productForm.get('code')?.hasError('required')">
+                    Code is required.
+                  </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput />
+                <mat-error *ngIf="productForm.get('name')?.hasError('required')">
+                    Name is required.
+                  </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input formControlName="description" matInput />
+                <mat-error *ngIf="productForm.get('description')?.hasError('required')">
+                    Description is required.
+                  </mat-error>
+            </mat-form-field>            
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input formControlName="price" matInput  step="0.01" type="number" />
+                <mat-error *ngIf="productForm.get('price')?.hasError('required')">
+                    Price is required.
+                  </mat-error>
+                  <mat-error *ngIf="productForm.get('price')?.hasError('invalidNumber')">Price must be a valid number.</mat-error>
+                  <mat-error *ngIf="productForm.get('price')?.hasError('negativeValue')">Negative values are not allowed.</mat-error>
+                  <mat-error *ngIf="productForm.get('price')?.hasError('invalidDecimal')">Price can have up to 2 decimal places only.</mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="div-50">
+                <button type="submit" mat-raised-button color="primary" [disabled]="productForm.invalid || isProcessing">{{ isEdit ? 'Update' : 'Save' }}</button>
+            </div>
+            <div class="div-50">
+                <a routerLink="/" mat-raised-button color="accent">Cancel</a>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</form>

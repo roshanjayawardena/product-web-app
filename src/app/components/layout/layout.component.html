@@ -1,0 +1,39 @@
+@if(showMenu){
+    <div>
+        <mat-toolbar color="primary" class="mat-elevation-z8">
+            <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Product Management System</span>
+            <span class="spacer-profile"></span>
+            <span>{{username}}</span>
+            <button mat-button [matMenuTriggerFor]="profile"><mat-icon>arrow_drop_down</mat-icon></button>
+            <mat-menu #profile>          
+                <button mat-menu-item routerLink="/login" (click)="logout()">Log out</button>
+            </mat-menu>
+        </mat-toolbar>
+        <mat-drawer-container autosize>
+            <mat-drawer #drawer opened="true" mode="side" position="start">
+                <mat-nav-list>                    
+                    <mat-list-item>
+                        <button mat-button routerLink="/product-list"><mat-icon>home</mat-icon>Products</button>
+                    </mat-list-item>      
+                    <mat-list-item *appUserHasRole="'Admin'">
+                        <button mat-button routerLink=""><mat-icon>home</mat-icon>Vehicle</button>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-drawer>
+            <mat-drawer-content>
+                <div style="text-align:center;min-height:600px;">
+                    <router-outlet></router-outlet>
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
+}@else{
+
+    <div style="text-align:center;min-height:600px;">
+        <router-outlet></router-outlet>
+    </div>
+
+}
