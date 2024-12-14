@@ -23,8 +23,7 @@ export class ProductListComponent implements OnInit {
 
   productlist!: product[];
   displayedColumns: string[] = ["code","name", "description", "price", "status", "action"];
-  datasource: any; 
-  isLoading = false; // Spinner visibility
+  datasource: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -39,18 +38,15 @@ export class ProductListComponent implements OnInit {
   }
 
   loadProducts() {
-    this.isLoading = true; // Show spinner
     this.service.GetAllProducts().subscribe({
       next: (item) => {
         this.productlist = item;
         this.datasource = new MatTableDataSource<product>(this.productlist);
         this.datasource.paginator = this.paginator;
         this.datasource.sort = this.sort;
-        this.isLoading = false; // Hide spinner
       },
       error: (error :HttpErrorResponse) => {
         this.toastr.error(error.error.detail || 'An error occurred while processing your request.');
-        this.isLoading = false; // Hide spinner
        }
     })
   }

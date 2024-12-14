@@ -1,7 +1,4 @@
-<div *ngIf="isLoading" class="spinner-overlay">
-    <mat-spinner [diameter]="40" color="primary"></mat-spinner>
-  </div>
-<mat-card *ngIf="!isLoading">
+<mat-card>
     <mat-card-header>
         <h1>Product Listing</h1>
         <button style="margin-left: 70%;" mat-raised-button color="primary" routerLink="/create-product">Add
