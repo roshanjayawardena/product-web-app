@@ -1,59 +1,55 @@
 # ProductApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
+This project was generated using Angular version 19.0.3.
+This is an Angular web application for managing products and displaying them on the frontend. It provides a clean and modern user interface, allowing users to view, add, edit, 
+and delete and change the status of products.
 
-## Development server
+## Prerequisites
+Ensure the following are installed:
 
-To start a local development server, run:
+- Angular CLI 19.0.3 or newer
+- Node.js 20.15 or newer
+- Visual Studio Code: IDE for development.
+- Git: Version control system.
+
+## Setup Instructions
+Follow these steps to set up and run the project:
+
+1. Clone the github
+   
+```bash
+git clone https://github.com/roshanjayawardena/product-web-app.git
+cd your-repo-name
+```
+
+## Installation
+
+2. To start a local development server, run:
 
 ```bash
+npm install
+
 ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Features
+- **Product Management**: View, add, edit, delete and change the status of products.
+- **Responsive Design**: Optimized for both mobile and desktop views.
+- **Error Handling**: Handles various API errors such as 400 and 500 status codes.
+- **Authentication**: Provides user login functionality with JWT-based authentication.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Technologies
 
-```bash
-ng generate component component-name
-```
+This project is built using the following technologies:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help 
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Angular 19**: Framework for building the frontend.
+- **RxJS**: For handling asynchronous operations.
+- **Angular Material**: For UI components like tables, buttons, dialogs, and spinners.
+- **TypeScript**: Language used for writing the application code.
+- **Node.js**: Server-side runtime for running development tools and packages.
+- **JWT**: For handling authentication and authorization.
+- **Angular CLI**: For project setup, development, and building.
+- **jwt-decode**: decode and get the user details from the token.
+- **ngx-toastr**: showing toast message.
