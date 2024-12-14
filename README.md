@@ -24,8 +24,8 @@ cd your-repo-name
 
 ## Installation
 
-2. To start a local development server, run:
-
+2. Then Open the Project using Visual Code.
+   To start a local development server, run:
 ```bash
 npm install
 
