@@ -36,7 +36,6 @@ Once the server is running, open your browser and navigate to `http://localhost:
 
 ## Features
 - **Product Management**: View, add, edit, delete and change the status of products.
-- **Responsive Design**: Optimized for both mobile and desktop views.
 - **Error Handling**: Handles various API errors such as 400 and 500 status codes.
 - **Authentication**: Provides user login functionality with JWT-based authentication.
 
